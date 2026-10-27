@@ -1,0 +1,91 @@
+- generic [ref=e1]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - link "Return to home screen" [ref=e220] [cursor=pointer]:
+        - /url: ""
+        - img "Meet logo" [ref=e221]
+      - button "Sign in" [ref=e222] [cursor=pointer]
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e24]:
+          - alert [ref=e223]:
+            - generic [ref=e224]: Do you want people to see and hear you in the meeting?
+            - button "Allow microphone and camera" [ref=e228]
+          - generic [ref=e31]:
+            - button "More options" [ref=e231] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e34]: more_vert
+            - tooltip [aria-hidden] [ref=e36]: More options
+          - generic [ref=e37]:
+            - generic [ref=e41]:
+              - button "Turn on microphone" [ref=e232] [cursor=pointer]:
+                - generic [aria-hidden] [ref=e46]: mic_off
+              - tooltip [aria-hidden] [ref=e48]: Turn on microphone (⌘ + d)
+            - generic [ref=e52]:
+              - button "Turn on camera" [ref=e233] [cursor=pointer]:
+                - generic [aria-hidden] [ref=e57]: videocam_off
+              - tooltip [aria-hidden] [ref=e59]: Turn on camera (⌘ + e)
+          - button "Backgrounds and effects" [ref=e234] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e64]: visual_effects
+        - generic [ref=e68]:
+          - generic [ref=e74]:
+            - 'button "Microphone: Permission needed" [disabled] [ref=e235]':
+              - generic [aria-hidden] [ref=e80]: mic_none
+              - generic [aria-hidden] [ref=e81]: Permission needed
+            - tooltip [aria-hidden] [ref=e86]: Permission needed
+          - generic [ref=e92]:
+            - 'button "Speaker: Permission needed" [disabled] [ref=e236]':
+              - generic [aria-hidden] [ref=e103]: Permission needed
+            - tooltip [aria-hidden] [ref=e108]: Permission needed
+          - generic [ref=e114]:
+            - 'button "Camera: Permission needed" [disabled] [ref=e237]':
+              - generic [aria-hidden] [ref=e120]: videocam
+              - generic [aria-hidden] [ref=e121]: Permission needed
+            - tooltip [aria-hidden] [ref=e126]: Permission needed
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e130]: What's your name?
+          - generic [ref=e131]:
+            - textbox "Your name" [ref=e238]
+            - generic [ref=e136]:
+              - text: 0/60
+              - generic [ref=e137]: 0 of 60 characters entered
+        - generic [ref=e140]:
+          - button "Gemini will take notes" [ref=e239] [cursor=pointer]:
+            - generic [ref=e145]:
+              - generic [ref=e147]:
+                - generic [aria-hidden] [ref=e150]: pen_spark_io25
+                - generic [aria-hidden] [ref=e153]: speech_to_text
+              - generic [ref=e154]: Gemini will take notes
+              - generic [aria-hidden] [ref=e156]: chevron_right
+          - generic [ref=e159]:
+            - generic [ref=e162]:
+              - button "Ask to join" [disabled]
+            - status
+          - generic [ref=e164]:
+            - button "Other ways to join" [disabled]:
+              - generic [aria-hidden]: Other ways to join
+              - generic:
+                - generic [aria-hidden]: expand_more
+    - contentinfo [ref=e165]:
+      - region "Legal disclaimers" [ref=e240]:
+        - paragraph [ref=e169]:
+          - text: "Gemini in Meetings: Gemini will analyze your conversation via temporary access to meeting content. The meeting host can turn it off."
+          - link "Learn more about Gemini in Meetings." [ref=e241] [cursor=pointer]:
+            - /url: https://support.google.com/docs/answer/13952129?sjid=17496404518690614800-NC&hl=en_US#zippy=,google-workspace-business-plans,google-meet
+        - paragraph [ref=e173]:
+          - text: By joining, you agree to the
+          - link "Terms of Service" [ref=e242] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS
+          - text: and
+          - link "Privacy Policy" [ref=e243] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?privacy=true
+          - text: . System info will be sent to confirm you're not a bot.
+  - iframe [ref=e178]:
+    - generic [ref=f3e6]:
+      - text: protected by
+      - strong [ref=f3e7]: reCAPTCHA
+  - dialog "Sign in with your Google account" [ref=e244]:
+    - generic [ref=e249]:
+      - heading "Sign in with your Google account" [level=2] [ref=e251]
+      - generic [ref=e252]: Instead of waiting to be let in, sign in with the Google account your host invited
+      - button "Got it" [active] [ref=e255] [cursor=pointer]

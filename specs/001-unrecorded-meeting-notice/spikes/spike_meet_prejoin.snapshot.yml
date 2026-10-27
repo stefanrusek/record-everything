@@ -1,0 +1,99 @@
+- generic [ref=e1]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - link [ref=e179] [cursor=pointer]:
+        - /url: ""
+      - button [ref=e181] [cursor=pointer]:
+        - generic [ref=e17]: Sign in
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e24]:
+          - generic [ref=e31]:
+            - button [ref=e182] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e34]: more_vert
+            - tooltip [aria-hidden] [ref=e36]: More options
+          - generic [ref=e37]:
+            - generic [ref=e41]:
+              - button [ref=e183] [cursor=pointer]:
+                - generic [aria-hidden] [ref=e46]: mic_off
+              - tooltip [aria-hidden] [ref=e48]: Turn on microphone (⌘ + d)
+            - generic [ref=e52]:
+              - button [ref=e184] [cursor=pointer]:
+                - generic [aria-hidden] [ref=e57]: videocam_off
+              - tooltip [aria-hidden] [ref=e59]: Turn on camera (⌘ + e)
+          - button [ref=e185] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e64]: visual_effects
+        - generic [ref=e68]:
+          - generic [ref=e74]:
+            - button [ref=e186] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e80]: mic_none
+              - generic [aria-hidden] [ref=e81]: Mic not found
+            - tooltip [aria-hidden] [ref=e86]
+          - generic [ref=e92]:
+            - button [ref=e187] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e103]: Speaker not found
+            - tooltip [aria-hidden] [ref=e108]
+          - generic [ref=e114]:
+            - button [ref=e188] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e120]: videocam
+              - generic [aria-hidden] [ref=e121]: Camera not found
+            - tooltip [aria-hidden] [ref=e126]
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e130]: What's your name?
+          - generic [ref=e131]:
+            - textbox [ref=e189]:
+              - /placeholder: Your name
+            - generic [ref=e136]:
+              - text: 0/60
+              - generic [ref=e137]: 0 of 60 characters entered
+        - generic [ref=e140]:
+          - button [ref=e190] [cursor=pointer]:
+            - generic [ref=e145]:
+              - generic [ref=e147]:
+                - generic [aria-hidden] [ref=e150]: pen_spark_io25
+                - generic [aria-hidden] [ref=e153]: speech_to_text
+              - generic [ref=e154]: Gemini will take notes
+              - generic [aria-hidden] [ref=e156]: chevron_right
+          - generic [ref=e162]:
+            - button [disabled]:
+              - generic: Ask to join
+          - generic [ref=e164]:
+            - button [disabled]:
+              - generic [aria-hidden]: Other ways to join
+              - generic:
+                - generic [aria-hidden]: expand_more
+    - contentinfo [ref=e165]:
+      - region [ref=e191]:
+        - paragraph [ref=e169]:
+          - text: "Gemini in Meetings: Gemini will analyze your conversation via temporary access to meeting content. The meeting host can turn it off."
+          - link [ref=e192] [cursor=pointer]:
+            - /url: https://support.google.com/docs/answer/13952129?sjid=17496404518690614800-NC&hl=en_US#zippy=,google-workspace-business-plans,google-meet
+            - text: Learn more about Gemini in Meetings.
+        - paragraph [ref=e173]:
+          - text: By joining, you agree to the
+          - link [ref=e193] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS
+            - text: Terms of Service
+          - text: and
+          - link [ref=e194] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?privacy=true
+            - text: Privacy Policy
+          - text: . System info will be sent to confirm you're not a bot.
+  - iframe [ref=e178]:
+    - generic [ref=f3e6]:
+      - text: protected by
+      - strong [ref=f3e7]: reCAPTCHA
+  - dialog "Do you want people to see and hear you in the meeting?" [ref=e196]:
+    - generic [ref=e199]:
+      - img "People using Meet." [ref=e201]
+      - generic [ref=e202]:
+        - heading "Do you want people to see and hear you in the meeting?" [level=1] [ref=e203]
+        - generic [ref=e204]: You can still turn off your microphone and camera anytime in the meeting.
+        - generic [ref=e207]:
+          - generic [active] [ref=e208] [cursor=pointer]
+          - generic [ref=e209]:
+            - button "More options" [ref=e210] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e212]: expand_more
+            - tooltip [aria-hidden] [ref=e214]: More options
+        - button "Continue without microphone and camera" [ref=e216] [cursor=pointer]

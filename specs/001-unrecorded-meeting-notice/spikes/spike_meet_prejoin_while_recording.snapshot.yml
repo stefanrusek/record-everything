@@ -1,0 +1,88 @@
+- generic [ref=f13e7]:
+  - generic [ref=f13e8]:
+    - link "Return to home screen" [ref=f13e11] [cursor=pointer]:
+      - /url: ""
+      - img "Meet logo" [ref=f13e12]
+    - generic [ref=f13e14]:
+      - generic [ref=f13e15]:
+        - img "User profile picture" [ref=f13e16]
+        - generic [ref=f13e17]:
+          - generic "Stefan Rusek" [ref=f13e18]: stefan@rusek.org
+          - link "Switch account" [ref=f13e19] [cursor=pointer]:
+            - /url: https://accounts.google.com/AccountChooser?continue=https://meet.google.com/meet/<meeting-code>?hs%3D49&hl=en
+      - generic [ref=f13e23]:
+        - link "Upgrade" [ref=f13e25] [cursor=pointer]
+        - tooltip [aria-hidden] [ref=f13e28]: Upgrade for premium features
+  - generic [ref=f13e31]:
+    - generic [ref=f13e32]:
+      - generic [ref=f13e34]:
+        - alert [ref=f13e36]:
+          - generic [ref=f13e37]: Do you want people to see and hear you in the meeting?
+          - button "Allow microphone and camera" [ref=f13e41]
+        - generic [ref=f13e44]: Stefan Rusek
+        - generic [ref=f13e54]:
+          - button "More options" [ref=f13e55] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f13e57]: more_vert
+          - tooltip [aria-hidden] [ref=f13e59]: More options
+        - generic [ref=f13e60]:
+          - generic [ref=f13e64]:
+            - button "Microphone problem. Show more info" [ref=f13e65] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f13e72]: mic
+            - tooltip [aria-hidden] [ref=f13e74]: Show more info
+          - generic [ref=f13e78]:
+            - button "Camera problem. Show more info" [ref=f13e79] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f13e86]: videocam
+            - tooltip [aria-hidden] [ref=f13e88]: Show more info
+          - generic [ref=f13e92]:
+            - button "Turn on background blur" [disabled] [ref=f13e93]:
+              - generic [aria-hidden] [ref=f13e95]: blur_on
+              - generic [aria-hidden] [ref=f13e97]: blur_on
+            - tooltip [aria-hidden] [ref=f13e99]: Turn on background blur
+      - generic [ref=f13e102]:
+        - generic [ref=f13e108]:
+          - 'button "Microphone: Permission needed" [disabled] [ref=f13e110]':
+            - generic [aria-hidden] [ref=f13e114]: mic_none
+            - generic [aria-hidden] [ref=f13e115]: Permission needed
+          - tooltip [aria-hidden] [ref=f13e120]: Permission needed
+        - generic [ref=f13e126]:
+          - 'button "Speaker: Permission needed" [disabled] [ref=f13e128]':
+            - generic [aria-hidden] [ref=f13e137]: Permission needed
+          - tooltip [aria-hidden] [ref=f13e142]: Permission needed
+        - generic [ref=f13e148]:
+          - 'button "Camera: Permission needed" [disabled] [ref=f13e150]':
+            - generic [aria-hidden] [ref=f13e154]: videocam
+            - generic [aria-hidden] [ref=f13e155]: Permission needed
+          - tooltip [aria-hidden] [ref=f13e160]: Permission needed
+        - generic [ref=f13e164]:
+          - button "Permission needed" [disabled] [ref=f13e166]:
+            - generic [aria-hidden] [ref=f13e169]: visual_effects
+            - generic [aria-hidden] [ref=f13e170]: Permission needed
+          - tooltip [aria-hidden] [ref=f13e175]: Permission needed
+    - generic [ref=f13e177]:
+      - generic [ref=f13e178]:
+        - generic [ref=f13e180]:
+          - heading "Ready to join?" [level=1] [ref=f13e181]:
+            - generic [ref=f13e183]:
+              - generic [ref=f13e184]: Ready to join?
+              - tooltip [aria-hidden] [ref=f13e185]: Ready to join?
+          - generic [ref=f13e187]:
+            - img "User profile picture" [ref=f13e189]
+            - status [ref=f13e190]: Stefan Rusek is in this call
+        - generic [ref=f13e192]:
+          - status [ref=f13e193]: This video call is being recorded
+          - generic [ref=f13e194]: This call is open to anyone
+      - generic [ref=f13e196]:
+        - generic [ref=f13e199]:
+          - generic [ref=f13e200]:
+            - button "Join now" [active] [ref=f13e202] [cursor=pointer]
+            - tooltip [aria-hidden] [ref=f13e205]
+          - status
+        - button "Other ways to join" [ref=f13e208] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f13e210]: Other ways to join
+          - generic [aria-hidden] [ref=f13e212]: expand_more
+  - contentinfo [ref=f13e213]:
+    - region "Legal disclaimers" [ref=f13e214]:
+      - paragraph [ref=f13e217]:
+        - text: "Gemini in Meetings: Gemini will analyze your conversation via temporary access to meeting content. The meeting host can turn it off."
+        - link "Learn more about Gemini in Meetings." [ref=f13e218] [cursor=pointer]:
+          - /url: https://support.google.com/docs/answer/13952129?sjid=17496404518690614800-NC&hl=en#zippy=,google-workspace-business-plans,google-meet

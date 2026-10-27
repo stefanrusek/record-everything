@@ -1,0 +1,19 @@
+- generic [ref=e1]:
+  - generic [ref=e198]:
+    - heading "You can't join this video call" [level=1] [ref=e199]
+    - button "Return to home screen" [active] [ref=e203] [cursor=pointer]
+    - button "Submit feedback" [ref=e208] [cursor=pointer]
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - img "Your meeting is safe" [ref=e214]
+        - generic [ref=e215]:
+          - heading "Your meeting is safe" [level=2] [ref=e217]
+          - generic [ref=e218]: No one can join a meeting unless invited or admitted by the host
+      - generic [ref=e221] [cursor=pointer]:
+        - generic [aria-hidden] [ref=e222]: Learn more
+        - link "Learn more about Google Meet Security & Privacy" [ref=e223]:
+          - /url: https://support.google.com/meet/answer/9852160?hl=en_US
+    - generic [ref=e224]:
+      - timer "Returning to home screen" [ref=e227]: "58"
+      - generic [ref=e228]: Returning to home screen
+  - generic [ref=e229]: Returning to home screen in 60 seconds.

@@ -1,0 +1,117 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e6]:
+    - generic:
+      - generic [ref=f11e7]:
+        - generic:
+          - generic:
+            - generic [ref=f11e8]:
+              - generic [ref=f11e9]:
+                - generic [ref=f11e10]: 4:59
+                - generic [ref=f11e11]: PM
+              - separator [ref=f11e12]
+              - generic [ref=f11e15]:
+                - heading "<meeting-code>" [level=1] [ref=f11e16]:
+                  - generic [ref=f11e18]:
+                    - generic [ref=f11e19]: <meeting-code>
+                    - tooltip [aria-hidden] [ref=f11e20]: <meeting-code>
+                - generic [ref=f11e22]:
+                  - button "This call is open to anyone" [ref=f11e23]:
+                    - generic [aria-hidden] [ref=f11e25]: meeting_room
+                  - tooltip [aria-hidden] [ref=f11e27]: This call is open to anyone
+              - generic [ref=f11e30]:
+                - button "Meeting details" [ref=f11e31] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f11e33]: info
+                - tooltip [aria-hidden] [ref=f11e35]: Meeting details
+            - region "Call feature notifications and actions" [ref=f11e39]:
+              - generic [ref=f11e42]:
+                - button [ref=f11e45]:
+                  - generic [ref=f11e48] [cursor=pointer]:
+                    - generic: External participants joined
+                    - generic [aria-hidden] [ref=f11e50]: domain_disabled
+                - tooltip [aria-hidden] [ref=f11e51]: Press Down Arrow to open the hover tray and Escape to close it.
+              - generic [ref=f11e54]:
+                - button "People" [ref=f11e57]:
+                  - generic [ref=f11e58]: "2"
+                - tooltip [aria-hidden] [ref=f11e66]: Press Down Arrow to open the hover tray and Escape to close it.
+              - generic [ref=f11e69]:
+                - button [ref=f11e72]:
+                  - generic [ref=f11e75] [cursor=pointer]:
+                    - generic: Your audio is merged with nearby devices
+                    - generic [aria-hidden] [ref=f11e77]: adaptive_audio_mic
+                - tooltip [aria-hidden] [ref=f11e78]: Press Down Arrow to open the hover tray and Escape to close it.
+              - generic [ref=f11e81]:
+                - button [ref=f11e84]:
+                  - generic [ref=f11e87] [cursor=pointer]:
+                    - generic: Gemini isn't taking notes
+                    - generic [aria-hidden] [ref=f11e90]: pen_spark
+                - tooltip [aria-hidden] [ref=f11e91]: Press Down Arrow to open the hover tray and Escape to close it.
+      - main [ref=f11e92]:
+        - generic [ref=f11e111]:
+          - generic [ref=f11e112]: Stefan Rusek
+          - tooltip [aria-hidden] [ref=f11e115]: Stefan Rusek
+        - generic [ref=f11e145]:
+          - generic [ref=f11e146]: Stefan Rusek
+          - tooltip [aria-hidden] [ref=f11e149]: Stefan Rusek
+      - generic:
+        - complementary "Side panel" [ref=f11e160]
+        - complementary "Left side panel" [ref=f11e161]
+      - generic [ref=f11e164]:
+        - generic [ref=f11e170]:
+          - generic:
+            - button "Gemini uses meeting conversations to answer questions" [ref=f11e177] [cursor=pointer]
+            - tooltip [aria-hidden] [ref=f11e180]: Gemini uses meeting conversations to answer questions
+        - region "Call controls" [ref=f11e182]:
+          - generic [ref=f11e188]:
+            - generic [ref=f11e190]:
+              - generic [ref=f11e193]:
+                - button "Audio settings" [ref=f11e194] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f11e197]: keyboard_arrow_up
+                - tooltip [aria-hidden] [ref=f11e199]: Audio settings
+              - generic [ref=f11e201]:
+                - button "Microphone problem. Show more info" [ref=f11e202] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f11e209]: mic
+                - tooltip [aria-hidden] [ref=f11e211]: Show more info
+            - generic [ref=f11e213]:
+              - generic [ref=f11e216]:
+                - button "Video settings" [ref=f11e217] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f11e220]: keyboard_arrow_up
+                - tooltip [aria-hidden] [ref=f11e222]: Video settings
+              - generic [ref=f11e224]:
+                - button "Camera problem. Show more info" [ref=f11e225] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f11e232]: videocam
+                - tooltip [aria-hidden] [ref=f11e234]: Show more info
+            - generic [ref=f11e237]:
+              - button "Share screen" [ref=f11e238] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e240]: computer_arrow_up
+              - tooltip [aria-hidden] [ref=f11e242]: Share screen
+            - generic [ref=f11e245]:
+              - button "Send a reaction" [ref=f11e246] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e248]: mood
+              - tooltip [aria-hidden] [ref=f11e250]: Send a reaction
+            - generic [ref=f11e254]:
+              - button "Captions and translation" [ref=f11e255] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e257]: translate_cc
+              - tooltip [aria-hidden] [ref=f11e259]: Captions and translation
+            - generic [ref=f11e262]:
+              - button "Raise hand (ctrl + ⌘ + h)" [ref=f11e263] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e265]: back_hand
+              - tooltip [aria-hidden] [ref=f11e267]: Raise hand (ctrl + ⌘ + h)
+            - generic [ref=f11e271]:
+              - button "More options" [ref=f11e272] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e274]: more_vert
+              - tooltip [aria-hidden] [ref=f11e276]: More options
+            - generic [ref=f11e278]:
+              - button "Leave call" [ref=f11e279] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e281]: call_end
+              - tooltip [aria-hidden] [ref=f11e283]: Leave call
+        - navigation [ref=f11e285]:
+          - generic [ref=f11e286]:
+            - generic [ref=f11e290]:
+              - button "Chat with everyone" [ref=f11e291] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e293]: chat
+              - tooltip [aria-hidden] [ref=f11e295]: Chat with everyone
+            - generic [ref=f11e299]:
+              - button "Meeting tools" [ref=f11e300] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f11e302]: apps
+              - tooltip [aria-hidden] [ref=f11e304]: Meeting tools
+  - generic [ref=f11e305]: You have joined the call. There is one other person in the call. Your camera is off. Your microphone is off. Your hand is lowered.

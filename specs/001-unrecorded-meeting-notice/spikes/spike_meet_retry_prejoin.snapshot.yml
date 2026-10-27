@@ -1,0 +1,81 @@
+- generic [ref=e1]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - link "Return to home screen" [ref=e11] [cursor=pointer]:
+        - /url: ""
+        - img "Meet logo" [ref=e12]
+      - button "Sign in" [ref=e15] [cursor=pointer]
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e24]:
+          - alert [ref=e88]:
+            - generic [ref=e89]: Do you want people to see and hear you in the meeting?
+            - button "Allow microphone and camera" [ref=e93]
+          - generic [ref=e31]:
+            - button "More options" [ref=e32] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e34]: more_vert
+            - tooltip [aria-hidden] [ref=e36]: More options
+          - generic [ref=e37]:
+            - generic [ref=e41]:
+              - button "Turn on microphone" [ref=e42] [cursor=pointer]:
+                - generic [aria-hidden] [ref=e46]: mic_off
+              - tooltip [aria-hidden] [ref=e48]: Turn on microphone (⌘ + d)
+            - generic [ref=e52]:
+              - button "Camera problem. Show more info" [ref=e96] [cursor=pointer]:
+                - generic [aria-hidden] [ref=e57]: videocam
+              - tooltip [aria-hidden] [ref=e59]: Show more info
+          - button "Backgrounds and effects" [ref=e61] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e64]: visual_effects
+        - generic [ref=e68]:
+          - generic [ref=e104]:
+            - 'button "Microphone: Permission needed" [disabled] [ref=e106]':
+              - generic [aria-hidden] [ref=e110]: mic_none
+              - generic [aria-hidden] [ref=e111]: Permission needed
+            - tooltip [aria-hidden] [ref=e116]: Permission needed
+          - generic [ref=e121]:
+            - 'button "Speaker: Permission needed" [disabled] [ref=e123]':
+              - generic [aria-hidden] [ref=e132]: Permission needed
+            - tooltip [aria-hidden] [ref=e137]: Permission needed
+          - generic [ref=e142]:
+            - 'button "Camera: Permission needed" [disabled] [ref=e144]':
+              - generic [aria-hidden] [ref=e148]: videocam
+              - generic [aria-hidden] [ref=e149]: Permission needed
+            - tooltip [aria-hidden] [ref=e154]: Permission needed
+      - generic [ref=e155]:
+        - generic [ref=e156]:
+          - generic [ref=e157]: This call is open to anyone
+          - generic [ref=e160]: What's your name?
+          - generic [ref=e161]:
+            - textbox "Your name" [ref=e164]
+            - generic [ref=e166]:
+              - text: 0/60
+              - generic [ref=e167]: 0 of 60 characters entered
+        - generic [ref=e170]:
+          - generic [ref=e173]:
+            - generic [ref=e176]:
+              - button "Join now" [disabled]
+            - status
+          - generic [ref=e178]:
+            - button "Other ways to join" [disabled]:
+              - generic [aria-hidden]: Other ways to join
+              - generic:
+                - generic [aria-hidden]: expand_more
+    - contentinfo [ref=e81]:
+      - region "Legal disclaimers" [ref=e82]:
+        - paragraph [ref=e181]:
+          - text: "Gemini in Meetings: Gemini will analyze your conversation via temporary access to meeting content. The meeting host can turn it off."
+          - link "Learn more about Gemini in Meetings." [ref=e182] [cursor=pointer]:
+            - /url: https://support.google.com/docs/answer/13952129?sjid=17496404518690614800-NC&hl=en_US#zippy=,google-workspace-business-plans,google-meet
+        - paragraph [ref=e85]:
+          - text: By joining, you agree to the
+          - link "Terms of Service" [ref=e86] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS
+          - text: and
+          - link "Privacy Policy" [ref=e87] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?privacy=true
+          - text: . System info will be sent to confirm you're not a bot.
+  - dialog "Sign in with your Google account" [ref=e183]:
+    - generic [ref=e188]:
+      - heading "Sign in with your Google account" [level=2] [ref=e190]
+      - generic [ref=e191]: Instead of waiting to be let in, sign in with the Google account your host invited
+      - button "Got it" [active] [ref=e194] [cursor=pointer]

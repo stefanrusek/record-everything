@@ -17,6 +17,7 @@
 - Q: If a meeting never shows its notes status, what should the notice do? → A: Decide 5 seconds after the user is inside the meeting, from what the meeting shows then; a false notice is better than a missed one.
 - Q: Which Meet display languages must the notice work in? → A: English only.
 - Q: If the user leaves the meeting while the notice is showing, should it disappear? → A: Yes, it is removed.
+- Q: Should a meeting the pre-join screen already shows as being recorded suppress the notice? → A: Yes; the pre-join recorded status counts as recorded.
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -37,7 +38,8 @@ The Google Meet user joins a meeting and is told, once the meeting's recording s
 3. **Given** the notice is showing, **When** I dismiss it, **Then** it disappears and I remain in the meeting.
 4. **Given** I left an unrecorded meeting, **When** I am admitted to it again, **Then** the notice appears again.
 5. **Given** the notice is showing, **When** I leave the meeting, **Then** the notice disappears.
-6. **Given** a meeting that shows no notes status and nothing showing it is being recorded, **When** I have been inside it for 5 seconds, **Then** the notice appears.
+6. **Given** the screen before I am let in says the call is being recorded, **When** I am admitted, **Then** no notice appears.
+7. **Given** a meeting that shows no notes status and nothing showing it is being recorded, **When** I have been inside it for 5 seconds, **Then** the notice appears.
 
 ### Edge Cases
 
@@ -55,7 +57,7 @@ The Google Meet user joins a meeting and is told, once the meeting's recording s
 ### Measurable Outcomes
 
 - **SC-001**: 100% of admissions into a meeting that is not being recorded show the notice.
-- **SC-002**: In 100% of admissions where a recording indicator or transcript indicator is showing, or notes are on, when the notice is decided, no notice appears.
+- **SC-002**: In 100% of admissions where a recording indicator or transcript indicator is showing, notes are on, or the screen before admission said the call is being recorded, when the notice is decided, no notice appears.
 - **SC-003**: A user can dismiss the notice with a single action.
 
 ## Assumptions

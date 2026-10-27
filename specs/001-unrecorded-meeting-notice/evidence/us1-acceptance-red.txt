@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /Users/stefan/Code/record-everything
+
+ ❯ tests/acceptance/acc_unrecorded_meeting_notice.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/acceptance/acc_unrecorded_meeting_notice.test.ts [ tests/acceptance/acc_unrecorded_meeting_notice.test.ts ]
+Error: Failed to resolve import "../../src/content" from "tests/acceptance/acc_unrecorded_meeting_notice.test.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/stefan/Code/record-everything/tests/acceptance/acc_unrecorded_meeting_notice.test.ts:4:22
+  2  |  import { describeFeature, loadFeature } from "@amiceli/vitest-cucumber";
+  3  |  import { createMeetPage } from "../fixtures/meet/meet-page";
+  4  |  import { start } from "../../src/content";
+     |                         ^
+  5  |  const NOTICE = "This meeting is not being recorded. You can ask the other participants to turn on recording.";
+  6  |  const noticeText = (document) => {
+ ❯ TransformPluginContext._formatLog node_modules/vite/dist/node/chunks/node.js:8803:39
+ ❯ TransformPluginContext.error node_modules/vite/dist/node/chunks/node.js:8800:14
+ ❯ resolveId node_modules/vite/dist/node/chunks/node.js:26594:18
+ ❯ node_modules/vite/dist/node/chunks/node.js:26693:23
+ ❯ TransformPluginContext.transform node_modules/vite/dist/node/chunks/node.js:26666:4
+ ❯ EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/node.js:8582:14
+ ❯ loadAndTransform node_modules/vite/dist/node/chunks/node.js:20155:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  19:29:22
+   Duration  517ms (environment 99%, worker 1%)
+

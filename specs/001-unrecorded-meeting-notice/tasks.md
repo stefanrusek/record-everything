@@ -76,101 +76,101 @@ description: "Task list for the Unrecorded Meeting Notice feature"
 
 Each task adds one scenario to `tests/acceptance/acc_unrecorded_meeting_notice.feature` (Gherkin) and its steps to `tests/acceptance/acc_unrecorded_meeting_notice.test.ts`, using `@amiceli/vitest-cucumber` as documented by the version installed in T005, `createMeetPage()` from `tests/fixtures/meet/meet-page.ts`, Vitest fake timers, and `start(page.document)` imported from `src/content.ts`. A shared step helper `noticeText(document)` returns the text of the notice (inside the open shadow root of the notice host under `document.documentElement`) or `null`. After every `page.set(...)` and timer advance the steps `await vi.advanceTimersByTimeAsync(0)` so jsdom's mutation observer callbacks run. Each task ends by running `npx vitest run tests/acceptance` and confirming the new scenario fails because `src/content.ts` does not exist.
 
-- [ ] T027 [US1] Add scenario "Notice appears in an unrecorded meeting" (spec.md scenario 1): given a page, `start` is called, then `set({ inCall: true, notes: 'off' })`; `noticeText` is `This meeting is not being recorded. You can ask the other participants to turn on recording.` with no timer advance
-- [ ] T028 [US1] Add scenario "No notice in a recorded meeting" (spec.md scenario 2): `set({ inCall: true, recordingChip: true, notes: 'off' })` gives `noticeText` `null`
-- [ ] T029 [US1] Add scenario "Recorded status shown before admission" (spec.md scenario 6): `set({ recordedStatus: true })` while `inCall` is false, then `set({ recordedStatus: false, inCall: true, notes: 'off' })`; `noticeText` is `null`
-- [ ] T030 [US1] Add scenario "Dismissing the notice" (spec.md scenario 3): with the notice showing, clicking the `Dismiss` button makes `noticeText` `null` and leaves the `Leave call` button in the document
-- [ ] T031 [US1] Add scenario "Rejoining shows the notice again" (spec.md scenario 4): after the notice has shown and `set({ inCall: false })`, then `set({ inCall: true, notes: 'off' })` makes `noticeText` the notice text again
-- [ ] T032 [US1] Add scenario "Rejoining within five seconds restarts the wait" (spec.md scenarios 4 and 7): `set({ inCall: true })` with no notes status, advance 3000 ms, `set({ inCall: false })`, `set({ inCall: true })`; `noticeText` is `null` after advancing 4999 ms and the notice text after 1 more ms
-- [ ] T033 [US1] Add scenario "Leaving removes the notice" (spec.md scenario 5): with the notice showing, `set({ inCall: false })` makes `noticeText` `null`
-- [ ] T034 [US1] Add scenario "Meeting that shows no notes status" (spec.md scenario 7): `set({ inCall: true })` only; `noticeText` is `null` after advancing 4999 ms and the notice text after 1 more ms (5000 ms in total)
-- [ ] T035 [US1] Add scenario "No notice while waiting to be let in" (spec.md edge case): with `inCall` false and 10000 ms of timer advancement, `noticeText` is `null`
-- [ ] T036 [US1] Add scenario "Recording starting later changes nothing" (spec.md edge case, FR-001): with the notice showing, `set({ recordingChip: true })` leaves `noticeText` unchanged
-- [ ] T037 [US1] Add scenario "Recording stopping later changes nothing" (spec.md edge case, FR-001): in a recorded meeting, `set({ recordingChip: false })` leaves `noticeText` `null`
-- [ ] T038 [US1] Run `npx vitest run tests/acceptance` through the gate runner as `us1-acceptance-red` and confirm all eleven scenarios fail for the right reason (a failing exit is expected here; the evidence file is the record) *(verification-only)*
+- [x] T027 [US1] Add scenario "Notice appears in an unrecorded meeting" (spec.md scenario 1): given a page, `start` is called, then `set({ inCall: true, notes: 'off' })`; `noticeText` is `This meeting is not being recorded. You can ask the other participants to turn on recording.` with no timer advance
+- [x] T028 [US1] Add scenario "No notice in a recorded meeting" (spec.md scenario 2): `set({ inCall: true, recordingChip: true, notes: 'off' })` gives `noticeText` `null`
+- [x] T029 [US1] Add scenario "Recorded status shown before admission" (spec.md scenario 6): `set({ recordedStatus: true })` while `inCall` is false, then `set({ recordedStatus: false, inCall: true, notes: 'off' })`; `noticeText` is `null`
+- [x] T030 [US1] Add scenario "Dismissing the notice" (spec.md scenario 3): with the notice showing, clicking the `Dismiss` button makes `noticeText` `null` and leaves the `Leave call` button in the document
+- [x] T031 [US1] Add scenario "Rejoining shows the notice again" (spec.md scenario 4): after the notice has shown and `set({ inCall: false })`, then `set({ inCall: true, notes: 'off' })` makes `noticeText` the notice text again
+- [x] T032 [US1] Add scenario "Rejoining within five seconds restarts the wait" (spec.md scenarios 4 and 7): `set({ inCall: true })` with no notes status, advance 3000 ms, `set({ inCall: false })`, `set({ inCall: true })`; `noticeText` is `null` after advancing 4999 ms and the notice text after 1 more ms
+- [x] T033 [US1] Add scenario "Leaving removes the notice" (spec.md scenario 5): with the notice showing, `set({ inCall: false })` makes `noticeText` `null`
+- [x] T034 [US1] Add scenario "Meeting that shows no notes status" (spec.md scenario 7): `set({ inCall: true })` only; `noticeText` is `null` after advancing 4999 ms and the notice text after 1 more ms (5000 ms in total)
+- [x] T035 [US1] Add scenario "No notice while waiting to be let in" (spec.md edge case): with `inCall` false and 10000 ms of timer advancement, `noticeText` is `null`
+- [x] T036 [US1] Add scenario "Recording starting later changes nothing" (spec.md edge case, FR-001): with the notice showing, `set({ recordingChip: true })` leaves `noticeText` unchanged
+- [x] T037 [US1] Add scenario "Recording stopping later changes nothing" (spec.md edge case, FR-001): in a recorded meeting, `set({ recordingChip: false })` leaves `noticeText` `null`
+- [x] T038 [US1] Run `npx vitest run tests/acceptance` through the gate runner as `us1-acceptance-red` and confirm all eleven scenarios fail for the right reason (a failing exit is expected here; the evidence file is the record) *(verification-only)*
 
 ### Contract tests and signal reader (`src/meet-signals.ts`)
 
 Contract tests live in `tests/contract/contract_meet_signals.test.ts` and assert the rows of `contracts/meet-page-signals.md` against `createMeetPage()` documents. Each test task is followed by the task that makes it pass; confirm the test fails first.
 
-- [ ] T039 [P] [US1] Add contract test for `inCall`: `readMeetSignals(doc).inCall` is `true` when an element whose `aria-label` contains `Leave call` (case-insensitive) exists in the top document and `false` otherwise
-- [ ] T040 [US1] Create `src/meet-signals.ts` exporting `type MeetSignals = { inCall: boolean }` and `readMeetSignals(doc: Document): MeetSignals` implementing `inCall`
-- [ ] T041 [US1] Add contract test for `recordingChip`: `true` when a leaf element's trimmed text is exactly `Recording` even when it sits inside an `aria-hidden` ancestor (read DOM text, never accessibility names), `false` otherwise
-- [ ] T042 [US1] Add `recordingChip: boolean` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
-- [ ] T043 [US1] Add contract test for `transcribingChip`: `true` when a leaf element's trimmed text is exactly `Transcribing`, `false` otherwise
-- [ ] T044 [US1] Add `transcribingChip: boolean` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
-- [ ] T045 [US1] Add contract test for `notes`: a leaf element matching `^Gemini (isn['’]t|is) taking notes$` gives `'off'` for `isn't` (straight and curly apostrophe) and `'on'` for `is`; no match gives `null`; the longer sentence `Gemini is taking notes and may improve them with presentation screenshots` and the text `Gemini stopped taking notes` give `null`
-- [ ] T046 [US1] Add `notes: 'on' | 'off' | null` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
-- [ ] T047 [US1] Add contract test for `recordedStatusSeen`: `true` when a `[role=status]` element's text contains `being recorded`, `false` when the only status elements say something else (for example `Stefan Rusek is in this call`)
-- [ ] T048 [US1] Add `recordedStatusSeen: boolean` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
+- [x] T039 [P] [US1] Add contract test for `inCall`: `readMeetSignals(doc).inCall` is `true` when an element whose `aria-label` contains `Leave call` (case-insensitive) exists in the top document and `false` otherwise
+- [x] T040 [US1] Create `src/meet-signals.ts` exporting `type MeetSignals = { inCall: boolean }` and `readMeetSignals(doc: Document): MeetSignals` implementing `inCall`
+- [x] T041 [US1] Add contract test for `recordingChip`: `true` when a leaf element's trimmed text is exactly `Recording` even when it sits inside an `aria-hidden` ancestor (read DOM text, never accessibility names), `false` otherwise
+- [x] T042 [US1] Add `recordingChip: boolean` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
+- [x] T043 [US1] Add contract test for `transcribingChip`: `true` when a leaf element's trimmed text is exactly `Transcribing`, `false` otherwise
+- [x] T044 [US1] Add `transcribingChip: boolean` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
+- [x] T045 [US1] Add contract test for `notes`: a leaf element matching `^Gemini (isn['’]t|is) taking notes$` gives `'off'` for `isn't` (straight and curly apostrophe) and `'on'` for `is`; no match gives `null`; the longer sentence `Gemini is taking notes and may improve them with presentation screenshots` and the text `Gemini stopped taking notes` give `null`
+- [x] T046 [US1] Add `notes: 'on' | 'off' | null` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
+- [x] T047 [US1] Add contract test for `recordedStatusSeen`: `true` when a `[role=status]` element's text contains `being recorded`, `false` when the only status elements say something else (for example `Stefan Rusek is in this call`)
+- [x] T048 [US1] Add `recordedStatusSeen: boolean` to `MeetSignals` and `readMeetSignals` in `src/meet-signals.ts`
 
 ### Decision tests and state machine (`src/notice-decision.ts`)
 
 Tests live in `tests/unit/notice-decision.test.ts`. Types, quoted from `data-model.md`: `DetectionState = { phase: 'outside' | 'settling' | 'decided'; recordedHint: boolean; insideSinceMs: number | null }`, input `MeetSignals & { nowMs: number }`, `Decision = { show: boolean; hide: boolean }`. `step(state, input)` returns `{ state, decision }`; `initialState` is `{ phase: 'outside', recordedHint: false, insideSinceMs: null }`. `step` chains transitions in one call (data-model.md).
 
-- [ ] T049 [P] [US1] Add test: from `outside`, `inCall: true` with `notes: null` moves to `settling`, sets `insideSinceMs` to `nowMs`, and returns `show: false, hide: false`
-- [ ] T050 [US1] Create `src/notice-decision.ts` exporting the types above, `initialState` and `step`, implementing the `outside → settling` transition
-- [ ] T051 [US1] Add test: from `outside`, one call with `inCall: true` and `notes: 'off'` (no capture signal, no hint) returns `phase: 'decided'` and `show: true`
-- [ ] T052 [US1] Implement the chained `outside → settling → decided` transition in `src/notice-decision.ts`, with `show = !recorded` where, quoted from `data-model.md`, `recorded = recordingChip || transcribingChip || notes == 'on' || recordedHint`
-- [ ] T053 [US1] Add test: from `settling`, a call where `notes` has become non-null moves to `decided` and returns `show: true` when `notes` is `'off'` and nothing else is recorded
-- [ ] T054 [US1] Implement the `settling → decided` transition on `notes != null` in `src/notice-decision.ts`
-- [ ] T055 [US1] Add table-driven test: at the decision moment, each of `recordingChip: true`, `transcribingChip: true`, `notes: 'on'` and `recordedHint: true` alone gives `show: false`
-- [ ] T056 [US1] Make the `recorded` expression in `src/notice-decision.ts` cover all four terms, passing T055
-- [ ] T057 [US1] Add test: from `settling` with `notes: null`, `nowMs - insideSinceMs` of 4999 stays `settling` with `show: false`, and 5000 moves to `decided` with `show = !recorded` (data-model.md: `nowMs - insideSinceMs >= 5000`)
-- [ ] T058 [US1] Implement the 5000 ms settle in `src/notice-decision.ts`
-- [ ] T059 [US1] Add test: from `settling` or `decided`, `inCall: false` returns `phase: 'outside'`, `hide: true`, `show: false`, `recordedHint: false`, `insideSinceMs: null`
-- [ ] T060 [US1] Implement the leave transition in `src/notice-decision.ts`
-- [ ] T061 [US1] Add test: once `decided`, while `inCall` stays true, any later change to `recordingChip`, `transcribingChip` or `notes` returns the same `phase`, `show: false` and `hide: false` (FR-001: later recording changes cannot show, withdraw or change the notice)
-- [ ] T062 [US1] Implement `decided` as final until leaving, in `src/notice-decision.ts`, so `show` is true at most once per admission
-- [ ] T063 [US1] Add test: while `outside`, `recordedStatusSeen: true` sets `recordedHint: true`; the hint persists through `settling` and makes `show` false at the decision; after leaving it is `false` again
-- [ ] T064 [US1] Implement `recordedHint` accumulation while `outside` in `src/notice-decision.ts`
+- [x] T049 [P] [US1] Add test: from `outside`, `inCall: true` with `notes: null` moves to `settling`, sets `insideSinceMs` to `nowMs`, and returns `show: false, hide: false`
+- [x] T050 [US1] Create `src/notice-decision.ts` exporting the types above, `initialState` and `step`, implementing the `outside → settling` transition
+- [x] T051 [US1] Add test: from `outside`, one call with `inCall: true` and `notes: 'off'` (no capture signal, no hint) returns `phase: 'decided'` and `show: true`
+- [x] T052 [US1] Implement the chained `outside → settling → decided` transition in `src/notice-decision.ts`, with `show = !recorded` where, quoted from `data-model.md`, `recorded = recordingChip || transcribingChip || notes == 'on' || recordedHint`
+- [x] T053 [US1] Add test: from `settling`, a call where `notes` has become non-null moves to `decided` and returns `show: true` when `notes` is `'off'` and nothing else is recorded
+- [x] T054 [US1] Implement the `settling → decided` transition on `notes != null` in `src/notice-decision.ts`
+- [x] T055 [US1] Add table-driven test: at the decision moment, each of `recordingChip: true`, `transcribingChip: true`, `notes: 'on'` and `recordedHint: true` alone gives `show: false`
+- [x] T056 [US1] Make the `recorded` expression in `src/notice-decision.ts` cover all four terms, passing T055
+- [x] T057 [US1] Add test: from `settling` with `notes: null`, `nowMs - insideSinceMs` of 4999 stays `settling` with `show: false`, and 5000 moves to `decided` with `show = !recorded` (data-model.md: `nowMs - insideSinceMs >= 5000`)
+- [x] T058 [US1] Implement the 5000 ms settle in `src/notice-decision.ts`
+- [x] T059 [US1] Add test: from `settling` or `decided`, `inCall: false` returns `phase: 'outside'`, `hide: true`, `show: false`, `recordedHint: false`, `insideSinceMs: null`
+- [x] T060 [US1] Implement the leave transition in `src/notice-decision.ts`
+- [x] T061 [US1] Add test: once `decided`, while `inCall` stays true, any later change to `recordingChip`, `transcribingChip` or `notes` returns the same `phase`, `show: false` and `hide: false` (FR-001: later recording changes cannot show, withdraw or change the notice)
+- [x] T062 [US1] Implement `decided` as final until leaving, in `src/notice-decision.ts`, so `show` is true at most once per admission
+- [x] T063 [US1] Add test: while `outside`, `recordedStatusSeen: true` sets `recordedHint: true`; the hint persists through `settling` and makes `show` false at the decision; after leaving it is `false` again
+- [x] T064 [US1] Implement `recordedHint` accumulation while `outside` in `src/notice-decision.ts`
 
 ### Notice UI tests and implementation (`src/notice-ui.ts`)
 
 Tests live in `tests/unit/notice-ui.test.ts` against `contracts/notice-ui.md`.
 
-- [ ] T065 [P] [US1] Add test: `showNotice(doc)` appends one host element to `doc.documentElement` whose open shadow root contains the exact text `This meeting is not being recorded. You can ask the other participants to turn on recording.`
-- [ ] T066 [US1] Create `src/notice-ui.ts` exporting `showNotice(doc: Document)` that appends the host element and renders the text, using only `createElement` and `textContent`
-- [ ] T067 [US1] Add test: the notice text sits in a container with `role="status"` and `aria-live="polite"`
-- [ ] T068 [US1] Give the notice container `role="status"` and `aria-live="polite"` in `src/notice-ui.ts`
-- [ ] T069 [US1] Add test: the shadow root contains exactly one `button` labelled `Dismiss`
-- [ ] T070 [US1] Add the `Dismiss` button to `showNotice` in `src/notice-ui.ts`
-- [ ] T071 [US1] Add test: the shadow root contains a `style` element whose text includes `position: fixed`
-- [ ] T072 [US1] Add the fixed-position `style` element to `showNotice` in `src/notice-ui.ts`
-- [ ] T073 [US1] Add test: clicking `Dismiss` removes the host element and changes nothing else in the document
-- [ ] T074 [US1] Add the `Dismiss` click handler to `showNotice` in `src/notice-ui.ts`
-- [ ] T075 [US1] Add test: `hideNotice(doc)` removes the host element when present and does nothing when absent
-- [ ] T076 [US1] Export `hideNotice(doc: Document)` from `src/notice-ui.ts`
+- [x] T065 [P] [US1] Add test: `showNotice(doc)` appends one host element to `doc.documentElement` whose open shadow root contains the exact text `This meeting is not being recorded. You can ask the other participants to turn on recording.`
+- [x] T066 [US1] Create `src/notice-ui.ts` exporting `showNotice(doc: Document)` that appends the host element and renders the text, using only `createElement` and `textContent`
+- [x] T067 [US1] Add test: the notice text sits in a container with `role="status"` and `aria-live="polite"`
+- [x] T068 [US1] Give the notice container `role="status"` and `aria-live="polite"` in `src/notice-ui.ts`
+- [x] T069 [US1] Add test: the shadow root contains exactly one `button` labelled `Dismiss`
+- [x] T070 [US1] Add the `Dismiss` button to `showNotice` in `src/notice-ui.ts`
+- [x] T071 [US1] Add test: the shadow root contains a `style` element whose text includes `position: fixed`
+- [x] T072 [US1] Add the fixed-position `style` element to `showNotice` in `src/notice-ui.ts`
+- [x] T073 [US1] Add test: clicking `Dismiss` removes the host element and changes nothing else in the document
+- [x] T074 [US1] Add the `Dismiss` click handler to `showNotice` in `src/notice-ui.ts`
+- [x] T075 [US1] Add test: `hideNotice(doc)` removes the host element when present and does nothing when absent
+- [x] T076 [US1] Export `hideNotice(doc: Document)` from `src/notice-ui.ts`
 
 ### Wiring (`src/content.ts`)
 
 Covered by the acceptance tests written above; no separate test task.
 
-- [ ] T077 [US1] Create `src/content.ts` exporting `start(doc: Document): void`: keep one `DetectionState` starting at `initialState`; define a check that builds `{ ...readMeetSignals(doc), nowMs: Date.now() }` and applies `step`; run the check once immediately
-- [ ] T078 [US1] In `src/content.ts` run the same check on every `MutationObserver` callback over `doc` with `subtree`, `childList`, `attributes` and `characterData` observed
-- [ ] T079 [US1] In `src/content.ts` have the check call `showNotice(doc)` when `decision.show` and `hideNotice(doc)` when `decision.hide`. Makes the acceptance scenarios for T027 to T031, T033, T035, T036 and T037 pass.
-- [ ] T080 [US1] In `src/content.ts`, each time the state enters `settling`, schedule one `setTimeout` of 5000 ms that runs the same check, so the settle fires even when Meet stops changing the page; a timer left over from an earlier admission is harmless because `step` uses `insideSinceMs`. Makes the scenarios for T032 and T034 pass.
-- [ ] T081 [US1] Run `npx vitest run tests/acceptance` through the gate runner as `us1-acceptance-green` and confirm all eleven scenarios pass *(verification-only)*
+- [x] T077 [US1] Create `src/content.ts` exporting `start(doc: Document): void`: keep one `DetectionState` starting at `initialState`; define a check that builds `{ ...readMeetSignals(doc), nowMs: Date.now() }` and applies `step`; run the check once immediately
+- [x] T078 [US1] In `src/content.ts` run the same check on every `MutationObserver` callback over `doc` with `subtree`, `childList`, `attributes` and `characterData` observed
+- [x] T079 [US1] In `src/content.ts` have the check call `showNotice(doc)` when `decision.show` and `hideNotice(doc)` when `decision.hide`. Makes the acceptance scenarios for T027 to T031, T033, T035, T036 and T037 pass.
+- [x] T080 [US1] In `src/content.ts`, each time the state enters `settling`, schedule one `setTimeout` of 5000 ms that runs the same check, so the settle fires even when Meet stops changing the page; a timer left over from an earlier admission is harmless because `step` uses `insideSinceMs`. Makes the scenarios for T032 and T034 pass.
+- [x] T081 [US1] Run `npx vitest run tests/acceptance` through the gate runner as `us1-acceptance-green` and confirm all eleven scenarios pass *(verification-only)*
 
 ### Packaging
 
-- [ ] T082 [US1] Add test `tests/unit/manifest.test.ts`: `manifest.json` has `manifest_version` 3, exactly one content script with `matches` equal to `["https://meet.google.com/*"]` and `js` equal to `["content.js"]`, and no `permissions`, `host_permissions` or `background` key
-- [ ] T083 [US1] Create `manifest.json` satisfying T082 (declaration-only; excluded from coverage), with `name` `Record Everything`, `version` `0.0.0`
-- [ ] T084 [US1] Create `build.mjs` using esbuild to bundle the stdin contents `import { start } from "./src/content.ts"; start(document);` (resolve directory = repository root, `format: "iife"`) to `dist/content.js`
-- [ ] T085 [US1] In `build.mjs` copy `manifest.json` to `dist/manifest.json`
-- [ ] T086 [US1] Add npm script `build` = `node build.mjs` to `package.json`
-- [ ] T087 [US1] Change the `gate` script in `package.json` to `npm run typecheck && npm run lint && npm test && npm run build`
+- [x] T082 [US1] Add test `tests/unit/manifest.test.ts`: `manifest.json` has `manifest_version` 3, exactly one content script with `matches` equal to `["https://meet.google.com/*"]` and `js` equal to `["content.js"]`, and no `permissions`, `host_permissions` or `background` key
+- [x] T083 [US1] Create `manifest.json` satisfying T082 (declaration-only; excluded from coverage), with `name` `Record Everything`, `version` `0.0.0`
+- [x] T084 [US1] Create `build.mjs` using esbuild to bundle the stdin contents `import { start } from "./src/content.ts"; start(document);` (resolve directory = repository root, `format: "iife"`) to `dist/content.js`
+- [x] T085 [US1] In `build.mjs` copy `manifest.json` to `dist/manifest.json`
+- [x] T086 [US1] Add npm script `build` = `node build.mjs` to `package.json`
+- [x] T087 [US1] Change the `gate` script in `package.json` to `npm run typecheck && npm run lint && npm test && npm run build`
 
 ### Fixture-double signal (decision D1; Principle 4.1)
 
-- [ ] T088 [US1] Add test `tests/unit/fixture-banner.test.ts`: running `node scripts/fixture-banner.mjs <dir>` prints a line containing both `tests/fixtures/meet/` and `still on fixtures` and exits 0 when `<dir>/live-verification.md` or `<dir>/live-reverification.md` is missing, and prints nothing and exits 0 when both exist
-- [ ] T089 [US1] Create `scripts/fixture-banner.mjs` satisfying T088
-- [ ] T090 [US1] Append `&& node scripts/fixture-banner.mjs specs/001-unrecorded-meeting-notice/evidence` to the `gate` script in `package.json`
+- [x] T088 [US1] Add test `tests/unit/fixture-banner.test.ts`: running `node scripts/fixture-banner.mjs <dir>` prints a line containing both `tests/fixtures/meet/` and `still on fixtures` and exits 0 when `<dir>/live-verification.md` or `<dir>/live-reverification.md` is missing, and prints nothing and exits 0 when both exist
+- [x] T089 [US1] Create `scripts/fixture-banner.mjs` satisfying T088
+- [x] T090 [US1] Append `&& node scripts/fixture-banner.mjs specs/001-unrecorded-meeting-notice/evidence` to the `gate` script in `package.json`
 
 ### Phase gate
 
-- [ ] T091 [US1] Gate: run `npm run gate` through the gate runner as `phase-3-gate` and confirm it exits 0 with every acceptance, contract and unit test passing, coverage at 100% for `src/`, `dist/content.js` and `dist/manifest.json` present, and the fixture banner line printed *(verification-only)*
-- [ ] T092 [US1] Commit the User Story 1 phase with message `feat: notify when joining a meeting that is not being recorded` and push *(verification-only)*
+- [x] T091 [US1] Gate: run `npm run gate` through the gate runner as `phase-3-gate` and confirm it exits 0 with every acceptance, contract and unit test passing, coverage at 100% for `src/`, `dist/content.js` and `dist/manifest.json` present, and the fixture banner line printed *(verification-only)*
+- [x] T092 [US1] Commit the User Story 1 phase with message `feat: notify when joining a meeting that is not being recorded` and push *(verification-only)*
 
 **Checkpoint**: User Story 1 is complete and independently testable.
 

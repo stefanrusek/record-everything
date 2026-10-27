@@ -1,0 +1,9 @@
+
+ RUN  v5.0.5 /Users/stefan/Code/record-everything
+
+
+ Test Files  1 passed (1)
+      Tests  39 passed (39)
+   Start at  19:32:27
+   Duration  361ms (environment 77%, tests 16%, import 5%, transform 2%, worker 1%)
+

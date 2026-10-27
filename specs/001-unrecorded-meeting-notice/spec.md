@@ -55,7 +55,7 @@ The Google Meet user joins a meeting and is told, once the meeting's recording s
 ### Measurable Outcomes
 
 - **SC-001**: 100% of admissions into a meeting that is not being recorded show the notice.
-- **SC-002**: In 100% of admissions where a recording, transcript or notes indicator is showing when the notice is decided, no notice appears.
+- **SC-002**: In 100% of admissions where a recording indicator or transcript indicator is showing, or notes are on, when the notice is decided, no notice appears.
 - **SC-003**: A user can dismiss the notice with a single action.
 
 ## Assumptions

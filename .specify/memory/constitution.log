@@ -1,0 +1,16 @@
+
+## 2026-10-27 constitution phase (bootstrap) - BLOCKED
+- Skill tool: "Unknown skill: speckit-constitution" (skill exists at .claude/skills/speckit-constitution/SKILL.md but was created after session start, so it is not registered).
+- AskUserQuestion is not available to this subagent; no way to ask the user about project principles.
+- Per instructions (project facts unknown, do not guess), constitution.md was NOT modified. Still the unfilled template.
+
+=== /speckit-constitution run (bootstrap) ===
+Inputs: project record-everything; principles Test-First, Simplicity; security/privacy NA; semver; ratified 2026-10-27.
+No extension hooks (.specify/extensions.yml absent).
+Result: constitution v1.0.0 written to .specify/memory/constitution.md (see file for text).
+Suggested commit: docs: ratify constitution v1.0.0 (Test-First and Simplicity principles)
+
+[amendment v6.2.0] No extension hooks (.specify/extensions.yml absent).
+Result: constitution amended 1.0.0 -> 1.1.0 (MINOR); SDD amendment v6.2.0 embedded verbatim (headings nested one level), stamp line added. Principles I and II kept.
+Open item: Principle I (confirm test fails first) vs amendment 4.1 (no red-phase observation required); both kept, flagged in Sync Impact Report.
+Suggested commit: docs: amend constitution to v1.1.0 (adopt SDD amendment v6.2.0)

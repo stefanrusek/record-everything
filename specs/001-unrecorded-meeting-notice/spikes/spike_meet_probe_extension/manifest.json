@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "spike_meet_probe (throwaway, not the product)",
+  "version": "0.0.1",
+  "description": "Plan-phase probe: records which Meet UI signals change on admission and when recording, transcript or notes turn on.",
+  "content_scripts": [
+    { "matches": ["https://meet.google.com/*"], "js": ["spike_probe.js"], "run_at": "document_start" }
+  ]
+}

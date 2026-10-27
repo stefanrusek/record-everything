@@ -17,7 +17,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
-    "test": "vitest run --coverage --passWithNoTests",
+    "test": "vitest run --coverage",
     "gate": "npm run typecheck && npm run lint && npm test && npm run build && node scripts/fixture-banner.mjs specs/001-unrecorded-meeting-notice/evidence",
     "build": "node build.mjs"
   }

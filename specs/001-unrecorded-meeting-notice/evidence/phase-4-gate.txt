@@ -1,0 +1,41 @@
+
+> record-everything@0.0.0 gate
+> npm run typecheck && npm run lint && npm test && npm run build && node scripts/fixture-banner.mjs specs/001-unrecorded-meeting-notice/evidence
+
+
+> record-everything@0.0.0 typecheck
+> tsc --noEmit
+
+
+> record-everything@0.0.0 lint
+> eslint . --max-warnings 0
+
+
+> record-everything@0.0.0 test
+> vitest run --coverage
+
+
+ RUN  v5.0.5 /Users/stefan/Code/record-everything
+      Coverage enabled with v8
+
+
+ Test Files  6 passed (6)
+      Tests  63 passed (63)
+   Start at  19:33:05
+   Duration  864ms (environment 87%, tests 6%, worker 5%, import 2%, transform 1%)
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+No files with missing coverage.
+4 files fully covered.
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 64/64 )
+Branches     : 100% ( 30/30 )
+Functions    : 100% ( 13/13 )
+Lines        : 100% ( 58/58 )
+================================================================================
+
+> record-everything@0.0.0 build
+> node build.mjs
+
+NOTE: tests/fixtures/meet/ stands in for live Meet; the tests are still on fixtures until live-verification.md and live-reverification.md exist.

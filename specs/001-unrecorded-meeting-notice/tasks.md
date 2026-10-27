@@ -180,9 +180,9 @@ Covered by the acceptance tests written above; no separate test task.
 
 **Purpose**: Remove scaffolding. The unattended run ends here.
 
-- [ ] T093 In `package.json` change the `test` script to `vitest run --coverage`, removing `--passWithNoTests`, so an empty test suite can no longer pass
-- [ ] T094 Gate: run `npm run gate` through the gate runner as `phase-4-gate` and confirm it exits 0 and still prints the fixture banner line *(verification-only)*
-- [ ] T095 Commit the Polish phase with message `chore: remove empty-suite tolerance` and push *(verification-only)*
+- [x] T093 In `package.json` change the `test` script to `vitest run --coverage`, removing `--passWithNoTests`, so an empty test suite can no longer pass
+- [x] T094 Gate: run `npm run gate` through the gate runner as `phase-4-gate` and confirm it exits 0 and still prints the fixture banner line *(verification-only)*
+- [x] T095 Commit the Polish phase with message `chore: remove empty-suite tolerance` and push *(verification-only)*
 
 ---
 

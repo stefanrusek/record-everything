@@ -1,0 +1,38 @@
+
+> record-everything@0.0.0 gate
+> npm run typecheck && npm run lint && npm test
+
+
+> record-everything@0.0.0 typecheck
+> tsc --noEmit
+
+
+> record-everything@0.0.0 lint
+> eslint . --max-warnings 0
+
+
+> record-everything@0.0.0 test
+> vitest run --coverage --passWithNoTests
+
+
+ RUN  v5.0.5 /Users/stefan/Code/record-everything
+      Coverage enabled with v8
+
+No test files found, exiting with code 0
+
+include: tests/**/*.test.ts
+exclude:  **/node_modules/**, **/.git/**
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |       0 |        0 |       0 |       0 |                   
+----------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : Unknown% ( 0/0 )
+Branches     : Unknown% ( 0/0 )
+Functions    : Unknown% ( 0/0 )
+Lines        : Unknown% ( 0/0 )
+================================================================================

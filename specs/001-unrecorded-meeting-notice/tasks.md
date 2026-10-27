@@ -27,20 +27,20 @@ description: "Task list for the Unrecorded Meeting Notice feature"
 **Purpose**: Everything plan.md "Test infrastructure" lists as missing. All of it precedes any feature task (Principle 3.4).
 
 - [x] T001 Commit the existing specification artifacts (`specs/001-unrecorded-meeting-notice/`, `.specify/memory/personas.md`, `.gitignore`) with message `docs: add spec, plan and tasks for 001-unrecorded-meeting-notice` (done: commit `b2508b8`, pushed, PR #1)
-- [ ] T002 Create `package.json` with `"name": "record-everything"`, `"version": "0.0.0"`, `"private": true`, `"type": "module"`
-- [ ] T003 [P] Create `tsconfig.json` with `"strict": true`, `"target": "ES2022"`, `"module": "ESNext"`, `"moduleResolution": "Bundler"`, `"lib": ["ES2022", "DOM"]`, `"noEmit": true`, `"include": ["src", "tests", "vitest.config.ts"]`
-- [ ] T004 [P] Append `node_modules/`, `dist/` and `coverage/` to `.gitignore`
-- [ ] T005 Install dev dependencies at exact versions in `package.json` using `npm install --save-dev --save-exact`: `typescript`, `esbuild`, `vitest`, `@vitest/coverage-v8`, `jsdom`, `@amiceli/vitest-cucumber`, `eslint`, `typescript-eslint`; first run `npm view <package> version` for each and install what the registry reports, so no version is assumed
-- [ ] T006 Create `vitest.config.ts` with test environment `jsdom` and `include: ["tests/**/*.test.ts"]`
-- [ ] T007 Add to `vitest.config.ts` coverage provider `v8` over `include: ["src/**"]` with thresholds `lines`, `functions`, `branches` and `statements` all `100` (Principle 4.2)
-- [ ] T008 [P] Create `eslint.config.js` using `typescript-eslint` recommended rules, ignoring `specs/**`, `dist/**`, `coverage/**`, `.claude/**`, `.specify/**` and `.playwright-mcp/**`
-- [ ] T009 Add to `eslint.config.js` a rule forbidding assignment to `innerHTML` and `outerHTML` (research.md R7, contracts/notice-ui.md Construction)
-- [ ] T010 Add npm script `typecheck` = `tsc --noEmit` to `package.json`
-- [ ] T011 Add npm script `lint` = `eslint . --max-warnings 0` to `package.json`
-- [ ] T012 Add npm script `test` = `vitest run --coverage --passWithNoTests` to `package.json`
-- [ ] T013 Add npm script `gate` = `npm run typecheck && npm run lint && npm test` to `package.json`
-- [ ] T014 Gate: run `npm run gate` through the gate runner as `phase-1-gate` and confirm it exits 0 *(verification-only)*
-- [ ] T015 Commit the Setup phase with message `chore: set up typescript, test, lint and coverage tooling` and push *(verification-only)*
+- [x] T002 Create `package.json` with `"name": "record-everything"`, `"version": "0.0.0"`, `"private": true`, `"type": "module"`
+- [x] T003 [P] Create `tsconfig.json` with `"strict": true`, `"target": "ES2022"`, `"module": "ESNext"`, `"moduleResolution": "Bundler"`, `"lib": ["ES2022", "DOM"]`, `"noEmit": true`, `"include": ["src", "tests", "vitest.config.ts"]`
+- [x] T004 [P] Append `node_modules/`, `dist/` and `coverage/` to `.gitignore`
+- [x] T005 Install dev dependencies at exact versions in `package.json` using `npm install --save-dev --save-exact`: `typescript`, `esbuild`, `vitest`, `@vitest/coverage-v8`, `jsdom`, `@amiceli/vitest-cucumber`, `eslint`, `typescript-eslint`; first run `npm view <package> version` for each and install what the registry reports, so no version is assumed
+- [x] T006 Create `vitest.config.ts` with test environment `jsdom` and `include: ["tests/**/*.test.ts"]`
+- [x] T007 Add to `vitest.config.ts` coverage provider `v8` over `include: ["src/**"]` with thresholds `lines`, `functions`, `branches` and `statements` all `100` (Principle 4.2)
+- [x] T008 [P] Create `eslint.config.js` using `typescript-eslint` recommended rules, ignoring `specs/**`, `dist/**`, `coverage/**`, `.claude/**`, `.specify/**` and `.playwright-mcp/**`
+- [x] T009 Add to `eslint.config.js` a rule forbidding assignment to `innerHTML` and `outerHTML` (research.md R7, contracts/notice-ui.md Construction)
+- [x] T010 Add npm script `typecheck` = `tsc --noEmit` to `package.json`
+- [x] T011 Add npm script `lint` = `eslint . --max-warnings 0` to `package.json`
+- [x] T012 Add npm script `test` = `vitest run --coverage --passWithNoTests` to `package.json`
+- [x] T013 Add npm script `gate` = `npm run typecheck && npm run lint && npm test` to `package.json`
+- [x] T014 Gate: run `npm run gate` through the gate runner as `phase-1-gate` and confirm it exits 0 *(verification-only)*
+- [x] T015 Commit the Setup phase with message `chore: set up typescript, test, lint and coverage tooling` and push *(verification-only)*
 
 ---
 

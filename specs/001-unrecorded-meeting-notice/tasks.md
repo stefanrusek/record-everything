@@ -50,17 +50,17 @@ description: "Task list for the Unrecorded Meeting Notice feature"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T016 Create `tests/fixtures/meet/meet-page.ts` exporting `type MeetPageState = { inCall: boolean; recordedStatus: boolean; recordingChip: boolean; transcribingChip: boolean; notes: 'on' | 'off' | null; overflow: boolean }`
-- [ ] T017 In `tests/fixtures/meet/meet-page.ts` export `createMeetPage(): { document: Document; set(state: Partial<MeetPageState>): void }` with all state defaulting to false/null, where `set` merges the state and updates the document in place so mutation observers fire
-- [ ] T018 In `tests/fixtures/meet/meet-page.ts` implement `inCall` as a `button` with `aria-label="Leave call"`
-- [ ] T019 Add a header comment to `tests/fixtures/meet/meet-page.ts` citing the snapshot files and stating that the fixture encodes only the observed signals
-- [ ] T020 In `tests/fixtures/meet/meet-page.ts` implement `recordedStatus` as an element with `role="status"` and text `This video call is being recorded`
-- [ ] T021 In `tests/fixtures/meet/meet-page.ts` implement `recordingChip` as an `aria-hidden="true"` container holding a leaf `Recording`, a leaf `radio_button_checked` and a tooltip `This meeting is being recorded`
-- [ ] T022 In `tests/fixtures/meet/meet-page.ts` implement `transcribingChip` as an `aria-hidden="true"` container holding a leaf `Transcribing`, a leaf `speech_to_text` and a tooltip `This call is being transcribed`
-- [ ] T023 In `tests/fixtures/meet/meet-page.ts` implement `notes` as a leaf, not `aria-hidden`, reading `Gemini isn't taking notes` for `'off'` or `Gemini is taking notes` for `'on'`, absent for `null`
-- [ ] T024 In `tests/fixtures/meet/meet-page.ts` implement `overflow` as a `button` with `aria-label="More activities in this meeting."`
-- [ ] T025 Gate: run `npm run gate` through the gate runner as `phase-2-gate` and confirm it exits 0 *(verification-only)*
-- [ ] T026 Commit the Foundational phase with message `test: add Meet page fixture builder` and push *(verification-only)*
+- [x] T016 Create `tests/fixtures/meet/meet-page.ts` exporting `type MeetPageState = { inCall: boolean; recordedStatus: boolean; recordingChip: boolean; transcribingChip: boolean; notes: 'on' | 'off' | null; overflow: boolean }`
+- [x] T017 In `tests/fixtures/meet/meet-page.ts` export `createMeetPage(): { document: Document; set(state: Partial<MeetPageState>): void }` with all state defaulting to false/null, where `set` merges the state and updates the document in place so mutation observers fire
+- [x] T018 In `tests/fixtures/meet/meet-page.ts` implement `inCall` as a `button` with `aria-label="Leave call"`
+- [x] T019 Add a header comment to `tests/fixtures/meet/meet-page.ts` citing the snapshot files and stating that the fixture encodes only the observed signals
+- [x] T020 In `tests/fixtures/meet/meet-page.ts` implement `recordedStatus` as an element with `role="status"` and text `This video call is being recorded`
+- [x] T021 In `tests/fixtures/meet/meet-page.ts` implement `recordingChip` as an `aria-hidden="true"` container holding a leaf `Recording`, a leaf `radio_button_checked` and a tooltip `This meeting is being recorded`
+- [x] T022 In `tests/fixtures/meet/meet-page.ts` implement `transcribingChip` as an `aria-hidden="true"` container holding a leaf `Transcribing`, a leaf `speech_to_text` and a tooltip `This call is being transcribed`
+- [x] T023 In `tests/fixtures/meet/meet-page.ts` implement `notes` as a leaf, not `aria-hidden`, reading `Gemini isn't taking notes` for `'off'` or `Gemini is taking notes` for `'on'`, absent for `null`
+- [x] T024 In `tests/fixtures/meet/meet-page.ts` implement `overflow` as a `button` with `aria-label="More activities in this meeting."`
+- [x] T025 Gate: run `npm run gate` through the gate runner as `phase-2-gate` and confirm it exits 0 *(verification-only)*
+- [x] T026 Commit the Foundational phase with message `test: add Meet page fixture builder` and push *(verification-only)*
 
 **Checkpoint**: Foundation ready; User Story 1 can begin.
 

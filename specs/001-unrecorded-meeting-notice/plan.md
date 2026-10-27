@@ -56,7 +56,7 @@ The plan is shaped by probes of real Meet (`research.md`, `spikes/`). The decisi
 
 ## Execution mode (3.6): Standard
 
-Fast pass is rejected: the project is greenfield and needs more than three executable files (four source modules plus the build script), and the Meet dependency carries unverified assumptions, so uncertainty resolves toward the heavier mode. Package-parallel is not warranted: one package. Task shape: Setup, Foundational, one implementation phase for User Story 1, Polish, with the phase gate `npm run gate`.
+Fast pass is rejected: the project is greenfield and needs more than three executable files (four source modules plus the build script), and the Meet dependency carries unverified assumptions, so uncertainty resolves toward the heavier mode. Package-parallel is not warranted: one package. Task shape: Setup, Foundational, one implementation phase for User Story 1, Polish, with the phase gate `npm run gate`; plus a final operator-only phase for the live checks, which an unattended run cannot do.
 
 ## Test infrastructure (3.4)
 
@@ -69,6 +69,7 @@ Present: none (empty repository). Missing and required, to be created by setup t
 5. esbuild build producing `dist/` (content script + `manifest.json`)
 6. One `npm run gate` command running typecheck, lint, all tests with coverage, and the build
 7. Fixture directory `tests/fixtures/meet/` populated from the real captures in `spikes/` (sanctioned double, D1)
+8. A run-level signal from `npm run gate` that names `tests/fixtures/meet/` and says the tests are still on fixtures until the live-verification evidence files exist (Principle 4.1, decision D1)
 
 No CI exists and no remote repository exists; the local gate is the gate. Nothing is deferred by this statement (1.4).
 

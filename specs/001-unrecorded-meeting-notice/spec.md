@@ -24,7 +24,7 @@
 
 Persona: Google Meet user (defined in `.specify/memory/personas.md`).
 
-The Google Meet user joins a meeting and is told straight away whether the meeting is unrecorded, so they can ask the other participants to start recording.
+The Google Meet user joins a meeting and is told, once the meeting's recording status has settled, whether the meeting is unrecorded, so they can ask the other participants to start recording.
 
 **Why this priority**: A meeting that nobody records is lost, and the user can only act on that while the meeting is still happening. This is the whole feature.
 
@@ -48,14 +48,14 @@ The Google Meet user joins a meeting and is told straight away whether the meeti
 
 ### Functional Requirements
 
-- **FR-001**: The notice is decided once per admission into a meeting, from whether the meeting is being recorded at that moment. It applies to every Google Meet meeting the user joins, displayed in English. Affects User Story 1.
+- **FR-001**: The notice is decided once per admission into a meeting. It applies to every Google Meet meeting the user joins, displayed in English. Affects User Story 1.
 
 ## Success Criteria *(mandatory)*
 
 ### Measurable Outcomes
 
 - **SC-001**: 100% of admissions into a meeting that is not being recorded show the notice.
-- **SC-002**: 0% of admissions into a meeting that is being recorded show the notice.
+- **SC-002**: In 100% of admissions where a recording, transcript or notes indicator is showing when the notice is decided, no notice appears.
 - **SC-003**: A user can dismiss the notice with a single action.
 
 ## Assumptions

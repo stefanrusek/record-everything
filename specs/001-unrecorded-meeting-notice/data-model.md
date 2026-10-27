@@ -2,6 +2,10 @@
 
 No persistence: no storage, no messaging, no background worker. All state is in memory in the content script and is lost when the page reloads, which matches spec Assumption "dismissing is not remembered".
 
+## Terms
+
+"Inside" and "admitted" (spec) mean `inCall`. "Chip" is Meet's status indicator for recording, transcript or notes. "Recorded" (spec: recording, transcript or notes) is the `recorded` expression below. `recordedStatusSeen` is the pre-join signal; `recordedHint` is its remembered copy.
+
 ## Entities
 
 ### MeetSignals (read from the page each time it changes; see `contracts/meet-page-signals.md`)
@@ -30,15 +34,16 @@ No persistence: no storage, no messaging, no background worker. All state is in 
 ## State transitions
 
 ```
-outside  --inCall-->                       settling
+outside  --inCall-->                       settling     (and, in the same step, on to decided when notes != null)
 settling --notes != null, or nowMs - insideSinceMs >= 5000--> decided (show = !recorded)
-settling --inCall false-->                 outside      (hide)
+settling --inCall false-->                 outside      (hide, reset recordedHint and insideSinceMs)
 decided  --inCall false-->                 outside      (hide, reset recordedHint and insideSinceMs)
 outside  --recordedStatusSeen-->           outside      (recordedHint = true)
 ```
 
 `recorded = recordingChip || transcribingChip || notes == 'on' || recordedHint`.
 
+- `step` chains transitions within one call: when `inCall` becomes true and `notes != null` already, one call moves `outside` through `settling` to `decided`. A page whose chips are already drawn therefore gets its decision at once; otherwise the decision waits for the settle marker or 5 seconds.
 - Entering `decided` is the only place a notice can be requested, so later recording changes cannot show, withdraw or change it (spec FR-001, edge case).
 - Leaving from `decided` or `settling` returns to `outside` and hides any showing notice (spec scenario 5) and resets the admission, so a rejoin is decided afresh (scenario 4).
 - `settling` ends at the settle marker or at 5 seconds inside, whichever is first (spec scenario 6). Nothing else triggers a re-check, so `content.ts` must schedule one re-check at 5 seconds after `inCall` becomes true, because Meet may stop changing the page before then.
